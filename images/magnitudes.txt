@@ -21,3 +21,9 @@ SDSS_z 16.50
 2MASS_j 16.05 0.10
 2MASS_h >16.19?
 2MASS_k >15.66?
+
+WISE Combined
+W1 16.251 0.079
+W2 16.229 0.235
+W3 12.829 upper limit
+W4 8.990 upper limit

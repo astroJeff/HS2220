@@ -15,38 +15,47 @@
 \newcommand{\Rsun}{\ifmmode {R_{\odot}}\else${R_{\odot}}$\fi}
 \newcommand{\lessim }{{\lower0.8ex\hbox{$\buildrel <\over\sim$}}}
 \newcommand{\gessim }{{\lower0.8ex\hbox{$\buildrel >\over\sim$}}}
+\newcommand{\Teff}{\ifmmode {T_{\rm eff} }\else $T_{\rm eff}$\fi}
+\newcommand{\logg}{\ifmmode {{\rm log}\ g }\else log~$g$\fi} 
 \def\amin{\ifmmode^{\prime}\else$^{\prime}$\fi}
 \def\asec{\ifmmode^{\prime\prime}\else$^{\prime\prime}$\fi}
 \def\ctss{$10^{-2}$ counts s$^{-1}$}
 \def\ergcms{erg~cm$^{-2}$~s$^{-1}$}
 \def\ergs{erg~s$^{-1}$}
 \def\ROSAT{\it ROSAT}
+\def\mesa{{\tt MESA}}
 
 
 \slugcomment{DRAFT \today}
 
-\shorttitle{Kicks and Wide WDWDs}
+\shorttitle{HS 2220$+$2146}
+
 \shortauthors{Andrews et al.}
 \bibliographystyle{apj}
 
 
 \begin{document}
 
-\title{The Formation of HS 2220+2146}
+\title{HS 2220$+$2146: A Possible Post Blue Straggler Binary}
 
-\author{Jeff Andrews\altaffilmark{1},  
-Marcel Ag\"ueros\altaffilmark{1}
+\author{
+Jeff Andrews\altaffilmark{1},  
+Marcel Ag\"ueros\altaffilmark{1},
+Natalie Gosnell,
+Alex Gianninas,
+Mukremin Kilic,
+Detlev Koester
 }
 
 \altaffiltext{1}{Columbia University, Department of Astronomy, 550 West 120th Street, New York, NY 10027, USA}
 
 \begin{abstract}
-
+We discuss the formation of system HS 2220$+$2146, a bound, double white dwarf binary (DWD) widely separated enough that they system should have never interacted. In the standard wide DWD evolutionary channel, the more massive star evolves first into a more massive WD. HS 2220$+$2146 does not show this; the more massive WD is the hotter, younger of the pair. We show that neither of the WDs in this pair do not likely have an unresolved companion, and the that the system is indeed wide enough that no significant mass accretion occurred in its history. We suggest that HS 2220$+$2146 began as a hierarchical triple system in which the inner binary merged forming a blue straggler binary. Both stars then evolved into WDs forming the DWD we see today. Because spectra provide the WD cooling ages, and using an initial-final mass relation, we can determine the Main Sequence masses of the WD progenitors (and hence their pre-WD lifetimes), we can reconstruct the prior evolution of this system with some degree of accuracy. The eccentric Kozai-Lidov mechanism provides a natural explanation for the merger of the inner binary.
 \end{abstract}
 
-\keywords{binaries: general --- white dwarfs}
+%\keywords{binaries: general --- white dwarfs}
 
-\section{Introduction}
+%\section{Introduction}
 
 %\begin{deluxetable*}{lll}
 %\tablewidth{0pt}
@@ -67,38 +76,259 @@ Marcel Ag\"ueros\altaffilmark{1}
 %\caption{}\label{fig1}
 %\end{figure}
 
-\section{Analytics}
 
-We get the quadrupolar timescale from Naoz et al.\ (2014):
+
+\section{Introduction} \label{sec:intro}
+
+
+Roughly half of all Galactic field stars are found in multiple systems, but only a fraction have small enough separations to interact. Using catalogs of nearby stars, \citet{duquennoy91} showed that the distribution of wide stellar binaries is well approximated by a Gaussian centered on an orbital period of 180 years, but \citet{dhital10} showed that stellar binaries can be identified with separations as large as 10$^5$ AU. For stars with $M\lesssim8$ \Msun, such widely separated binaries never interact, independently evolving through the Main Sequence (MS), giant branches, until they become white dwarfs (WD).
+
+
+Wide double WDs (DWD), the evolutionary endpoints of wide binaries, were first identified as common proper motion pairs in nearby proper motion catalogs \citep{sanduleak82,greenstein86,sion91}. These searches have become somewhat more sophisticated, identifying wide DWDs using both precision proper motion data from the Sloan Digital Sky Survey (SDSS) \citep{andrews12} as well as statistically associating astrometrically close pairs of blue objects as wide DWDs \citep{baxter14}. Our most recent search employs both methods to the ninth data release of SDSS, bringing the total number of identified wide DWDs to 142 (Andrews et al., in prep).
+
+
+Included in these sample are two spectroscopically confirmed triple degenerate systems, Sanduleak A/B \citep{maxted00} and G 021-15 \citep{farihi05}, and one candidate triple system, PG 0901$+$140 (Andrews et al.\ in prep). These systems are composed of an unresolved pair of WDs, with a widely separated, visual WD companion. \citet{reipurth12} argue that such hierarchical triple systems may be the natural result of newborn triple systems: the inner binary tightens, while the outer companion's orbit expands. Triple degenerate systems form when all three stars have evolved into WDs, with the inner binary surviving any phase of mass transfer or dynamical interaction it underwent. As a corollary, some systems should exist in which the inner binary has merged, forming a blue straggler, with an outer, binary companion. Such systems would evolve into wide DWDs.
+
+
+The eccentric Kozai-Lidov (EKL) mechanism has been shown to secularly trade angular momentum between the inner and outer binary of a hierarchical triple, resulting in large oscillations in the inner binary's eccentricity and mutual inclination of two orbital planes. \citet{perets09} first suggested that the EKL mechanism combined with tidal dissipation could cause the inner binary to merge, forming a blue straggler in a binary. \citet{naoz14} expand the EKL equations to include the octopolar term and run a suite of simulations finding the distribution of blue straggler binary orbital periods resulting from the merger of an inner binary in a hierarchical triple. The evolutionary product of these simulations would be a wide DWD.
+
+
+In our most recent search for wide binaries (Andrews et al., in prep) we identified the wide binary HS 2220$+$2146 as a system that could not have formed through standard, non-interacting evolution. High resolution VLT spectra indicate the more massive WD in this system has a higher temperature than its less massive companion; since more massive MS stars evolve faster into more massive WDs. Recently, the more massive WD in the DWD SDSS J1257+5428 \citep{badenes09,marsh11} was also shown to have a younger age than its companion \citep{bours15}. However, HS 2220$+$2146 is fundamentally different because it is very unlikely that mass transfer played a roll in its evolution. Here we show that HS 2220$+$2146 is consistent with having been formed from a hierarchical triple in which the inner binary merged into a blue straggler. 
+
+
+Observations of blue straggler binaries in the open cluster NGC 188 show that a large fraction are found in stellar binaries \citep{mathieu09}. \citet{geller11} showed that the companions to blue stragglers may in fact be WDs, and \citet{gosnell14} identified three specific blue stragglers with young WD companions. The widest orbital period binary, WOCS 4540 has a $P_{\rm orb} = 3030\pm70$ days. These authors argue that although the binary is difficult to create via a standard Roche lobe overflow, it can be formed through accretion from the stellar wind of a binary. HS 2220$+$2146, however has a $P_{\rm orb} \sim 10^3$ yrs, too wide to have formed a blue straggler through mass accretion. If our formation scenario is correct, HS 2220$+$2146 had to have formed through the merger of a close binary, the first such system identified to have formed through this evolutionary channel.
+
+
+In Section \ref{sec:obs} we demonstrate through both high resolution spectra and gravitational redshift measurements that the hotter WD in HS 2220$+$2146 is indeed the more massive WD in the pair. We work backward to reconstruct the formation of this binary in Section \ref{sec:scenario}. We discuss the possibility of the EKL mechanism being responsible for merging the inner binary, and rule out the possibility of significant stellar wind accretion in Section \ref{sec:discuss}. We conclude in Section \ref{sec:concl}.
+
+
+
+\section{Observations} \label{sec:obs}
+
+The two WDs in HS 2220$+$2146 were first identified as an associated system by \citet{baxter14}. Using the astrometry from SDSS DR7 \citep{DR7paper}, these authors show that the two WDs form a wide binary due to their close separation, their matching proper motion, and their similar derived distance modulii. In Andrews et al.\ (in prep) we recover this system as part of our search for wide DWDs in SDSS DR9. 
+
+Two separate spectra of each WD in the system were taken as part of the Supernova Progenitor surveY \citep[SPY;][]{koester09} in 2002 on the nights of September 25th and 26th. Details of the data reduction can be found in that work, but we note here that the spectra were taken with a high resolution of $R \approx 14,000$. We show the individual spectra in Figure \ref{fig:spectra} along with fits to model templates using the technique originally from \citet{bergeron92} and described in detail in \citet[][and references therein]{gianninas11}. These solutions are based on one-dimensional models using a mixing length parameter ML2/$\alpha = 0.8$ \citep{tremblay10, tremblay11}. The best fit \Teff\ and \logg\ values from our spectral fits are given in Table \ref{tab:spectra} along with their derived masses ($M_{\rm WD}$) and cooling ages ($\tau_{\rm cool}$).
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.85\columnwidth]{../figures/spectra.pdf}
+\caption{ We show Balmer absorption lines, from H$\beta$ to H8 and the corresponding best fit spectral templates (from \citet{tremblay11}) for HS 2220$+$2146A and HS 2220$+$2146B. Spectra were taken by the SPY survey using the VLT, with $R \approx 14,000$. \Teff\ and \logg\ values and the corresponding $M_{\rm WD}$ and $\tau_{\rm cool}$ values are given in Table \ref{tab:spectra}.}
+\label{fig:spectra}
+\end{center}
+\end{figure}
+
+
+\begin{deluxetable}{lcr@{ $\pm$ }lr@{ $\pm$ }l}
+\tablecaption{Spectroscopic Fits}
+\tablehead{
+\colhead{} & 
+\colhead{} & 
+\multicolumn{2}{c}{} &
+\multicolumn{2}{c}{} \\
+\colhead{} & 
+\colhead{} & 
+\multicolumn{2}{c}{HS 2220$+$2146A} & 
+\multicolumn{2}{c}{HS 2220$+$2146B} 
+}
+\startdata
+\cutinhead{Spectroscopic Fits}
+ \multirow{2}{*}{VLT} & \Teff & 14270 & 270 K & 18830 & 220 K \\
+ & \logg & 8.15 & 0.04 & 8.35 & 0.04 \\
+ %\cutinhead{Koester Spectroscopic Fits}
+% Koester Models & \Teff & 14600 & 30 K & 18740 & 40 K \\
+ %~SPY Survey & \logg & 8.08 & 0.01 & 8.24 & 0.01 \\
+ %Koester Models & \Teff & 14430 & 60 K & 18310 & 30 K \\
+ %~Revised & \logg & 8.22 & 0.01 & 8.28 & 0.01 \\
+%\multirow{2}{*}{Baxter Spectra} & \Teff & 13950 & 320 K & 19020 & 440 K \\
+ %& \logg & 8.07 & 0.07 & 8.37 & 0.07 \\
+ FLWO & $v_{\rm radial}$ & 30 & 7 km s$^{-1}$ & 53 & 19 km s$^{-1}$ \\
+\cutinhead{Derived Quantities}
+\multirow{2}{*}{Bergeron Models} & M$_{\rm WD}$ & 0.702 & 0.022 \Msun & 0.837 & 0.022 \Msun \\
+ & $\tau_{\rm cool}$ & 289 & 22 Myr & 179 & 14 Myr \\
+ Wood Models & $v_{\rm grav}$ & 38 & 2 km s$^{-1}$ & 53 & 3 km s$^{-1}$ \\ 
+ \cutinhead{Model Fits}
+  Williams IFMR & M$_{\rm ZAMS}$ & \multicolumn{2}{c}{2.8 \Msun} & \multicolumn{2}{c}{3.9 \Msun} \\
+  \mesa\ Lifetime & $\tau_{\rm stellar}$ & \multicolumn{2}{c}{590 Myr} & \multicolumn{2}{c}{230 Myr} 
+ \enddata
+ \label{tab:spectra}
+ \end{deluxetable}
+
+
+
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.95\columnwidth]{../figures/SED.pdf}
+\caption{ ({\bf THIS FIGURE STILL NEEDS LOTS OF WORK.}) Using the best fit \Teff\ values from our spectral fits, we compare the SED of HS 2220$+$2146A and HS 2220$+$2146B with SDSS and 2MASS photometry. }
+\label{fig:SED}
+\end{center}
+\end{figure}
+
+Standard stellar evolution theory suggests that the initially more massive star will evolve into a more massive WD first compared with its companion. Since WD mass and the WD cooling age map roughly to \logg\ and \Teff, one would expect that, for an independent, coeval wide DWD, the WD with the larger \logg\ will be the cooler one. The spectral values in Table \ref{tab:spectra} that, for HS 2220$+$2146, the opposite is true. Detailed fits to WD atmospheric models are necessary since more massive WDs have a smaller radius and therefore cool more slowly, but Table \ref{tab:spectra} confirms our basic intuition about this system: the {\it less} massive WD was born first.
+
+
+This evolution could possibly be explained by one of the unresolved WDs being in a close binary with another star. Only a late type disk dwarf or brown dwarf could escape detection in the VLT spectra. In Figure \ref{fig:SED} we compare the calculated SED derived from the best fit spectral value to SDSS and 2MASS photometry. The lack of any excess in the red and infrared portion of the SED limits the possibility of any late-type stellar companion or dust disk around either WD. 
+
+\begin{figure}[b]
+\begin{center}
+\includegraphics[width=0.99\columnwidth]{../figures/FLWO_rv.pdf}
+\caption{ The radial velocities for HS 2220$+$2146A (blue) and HS 2220$+$2146B (red) calculated from the follow-up spectra taken with the 1.5-meter FLWO. There is no apparent radial velocity variation due to a hidden binary companion. HS 2220$+$2146B has a larger average radial velocity (red dashed line) than its companion (blue dashed line) because its larger mass causes a larger gravitational redshift. The apparent radial velocity difference provides a consistency check for our spectroscopic solutions.}
+\label{fig:rv}
+\end{center}
+\end{figure}
+
+
+Any putative hidden companion could be another WD. We obtain several follow-up spectra with the FLWO 1.5-meter telescope on the nights of July 11 and July 20, 2015 to search for radial velocity variations. These data were reduced using standard procedures. ({\bf Description of reduction here. How many lines were included? Were lines fit using Lorentz profiles or WD atmospheric models?}) Although the current data do not constrain all orbital periods and companion masses, Figure \ref{fig:rv} shows that neither of these WDs shows any indication of significant radial velocity variations. There are two known triple degenerate systems\footnote{We have recently identified a third degenerate candidate, PG 0901+140}, G 021-15 \citep{farihi05} and Sanduleak A/B \citep{maxted00}.
+
+
+The dashed lines in Figure \ref{fig:rv} show the average apparent radial velocity of each WD, which we provide along with the derived uncertainty in Table \ref{tab:spectra}. HS 2220$+$2146B, with a larger mass, has an apparent radial velocity larger by 23 km s$^{-1}$. This difference is accounted for by the different gravitational redshifts of the two WDs, which can easily be calculated straightforward from the WD's mass and radius \citep{falcon10}:
 \begin{equation}
-t_{\rm quad} \sim \frac{2 \pi a_2^3 \left( 1 - e_2^2 \right)^{3/2} \sqrt{m_1 + m_2} }{a_1^{3/2} m_3 \sqrt{G}},
+v_{\rm grav} = \frac{G~M_{\rm WD}}{R_{\rm WD}~c}. \label{eq:v_grav}
 \end{equation}
+From our spectroscopically determined \Teff\ and $M_{\rm WD}$ measurements for each WD, we interpolate between the WD mass-radius tables from \citet{wood95} to obtain the WD radii. The contribution to the apparent radial velocity from gravitational redshift in Table \ref{tab:spectra}. 
+
+If the system is indeed an associated binary, which is overwhelmingly indicated by both the work by \citet{baxter14} and Andrews et al.\ (in prep), the two WDs must have the same actual radial velocity. The difference in the apparent radial velocities of the two WDs must be due to differences in the gravitational redshift of the two WDs. Since HS 2220$+$2146B has a larger radial velocity, it must also be more massive than its companion. Since the difference in the calculated gravitational redshift is in such close agreement with the observed radial velocity difference, these radial velocities provide an important consistency check on the spectroscopic results listed in Table \ref{tab:spectra}.
+
+Based on the original fits from the SPY survey \citep{koester09},% shown in Table \ref{tab:spectra}, 
+\citet{baxter14} argue that when observational uncertainties are taken into account, using three separate test IFMRs, the two WDs are consistent with having been born at the same time and evolving independently \footnote{\citet{baxter14} enlarge the uncertainties on the original SPY survey fits for \logg\ from 0.01 to 0.07, presumable to account for systematic uncertainties in the spectra, which may account for their conclusion that the system evolved normally.}. As an independent check, \citet{baxter14} take their own low-resolution Gemini-N/GMOS spectra which are consistent with our spectral values.% (which we provide in Table \ref{tab:spectra}). 
+No matter which spectroscopic fit used, HS 2220$+$2146B always has a significantly larger \logg\ and \Teff.
+
+Why do these spectra produce such different results? One answer may lie in the spectral templates. Improvements have been made since the SPY survey spectral fits from \citet{koester09}. In particular, \citet{tremblay09} improved Stark broadening calculations and included some nonideal effects on the spectra. The numerical fitting techniques also differ \citep[see][for a discussion of these differences]{gianninas11}. Finally, \citet{tremblay13} have updated WD atmospheric models based on recent 3D atmospheric simulations of WDs. Using up-to-date spectra, we fit the VLT spectra with both techniques, and provide both spectral values in Table \ref{tab:spectra}. The disagreement in spectral values is typical. Regardless of the technique or models used, these spectral templates robustly show that HS 2220$+$2146B has a larger \logg\ and higher \Teff\ than its companion: the more massive WD formed after the less massive WD. Hereafter we use the derived $M_{\rm WD}$ and $\tau_{\rm cool}$ measurements from the Bergeron models.
 
 
+
+
+\section{Proposed Formation Scenario} \label{sec:scenario}
+
+To form a system in which the more massive WD formed second, we propose the scenario outlined in Figure \ref{fig:scenario}. In this scenario, the system began as a hierarchical triple system. While all three stars were still on the MS, the inner binary merged forming a blue straggler. The system then appeared as a wide binary composed of the merger product (with a much shorter lifetime, but the merger ``restarted'' its clock) and a MS star that had already been undergoing nuclear burning. The outer, now less massive, star evolved first, into the 0.702 \Msun\ WD, HS 2220$+$2146A. Somewhat later, the blue straggler evolved into the 0.837 \Msun\ WD, HS 2220$+$2146B.
+
+
+The high resolution WD spectra allow us to work backwards to reconstruct the evolution of this binary. The less massive WD in the pair has a cooling age of 289 Myr. Using the IFMR from \citet{williams09}, this star evolved from a  2.8 \Msun\ MS star. We run a suite of stellar evolution models using \mesa\ to find that this star had a lifetime of 590 Myr. This sets the overall lifetime to 875 Myr (rounded to the nearest 25 Myr). The cooling age of the 0.837 \Msun\ WD is 179 Myr indicating how long ago it evolved into a WD. Again, using the \citet{williams09} IFMR, we determine this WD came from a 3.9 \Msun\ MS star. Our \mesa\ models indicate this star had a lifetime of 230 Myr. The difference between the cooling age and stellar lifetimes of each WD derived by our models gives the merger time of the inner binary in the initial hierarchical triple. Although the general scenario outlined in Figure \ref{fig:scenario} is robust to different choices of stellar lifetime function or IFMR, the timeline provided in Figure \ref{fig:scenario} is suggestive, and we therefore round to the nearest 25 Myr.
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=0.99\columnwidth]{../figures/history_small.pdf}
+\caption{ Our proposed formation history for HS 2220$+$2146 described in Section \ref{sec:scenario}. Provided times are rough estimates rounded to the nearest 25 Myr. }
+\label{fig:scenario}
+\end{center}
+\end{figure}
+
+
+The two WDs in HS 2220$+$2146 have an angular separation of 6.2\asec. At the spectroscopic distance of 76 pc, this corresponds to a projected physical separation of 470 AU. For widely enough separated stars, mass is lost with the specific angular momentum of the mass losing star causing the orbit to expand upon mass loss (Jeans mode mass loss). Orbital eccentricity does not secularly change, and $A (M_1 + M_2)$ is a conserved quantity \citep{hadjidemetriou63}. If we take the current projected separation as a lower limit on $A$, we can estimate the orbital separation of the outer binary at birth to be $\gtrsim 110$~AU, expanding to 160 AU after the first component becomes a WD. The true orbital separation is likely to be somewhat larger due to the unknown inclination and phase of the orbit \citep{fischer92}. 
+
+
+
+\section{Discussion} \label{sec:discuss}
+
+\subsection{The Eccentric Kozai-Lidov Mechanism}
+
+The eccentric Kozai-Lidov (EKL) mechanism has been shown to cause the secular exchange of angular momentum between the inner and outer binary in triple systems, however few observational tests of its efficiency exist. If our scenario provided in Figure \ref{fig:scenario} is correct, the 475 Myr merger time of the inner binary should match with simulations of the EKL mechanism. \citet{naoz13} provides the relevant quadrupolar timescale for the EKL mechanism:
 \begin{equation}
-t_{\rm quad} \sim 2.4 ~{\rm Myr} \left( 1-e_2^2 \right) \left( \frac{a_2}{150 ~{\rm AU}} \right)^{3} \left( \frac{m_{1+2}}{3.86 ~\Msun} \right)^{1/2} \left( \frac{m_3}{2.81 ~\Msun} \right)^{-1} \left( \frac{a_1}{1 ~{\rm AU}} \right)^{-3/2}
+t_{\rm quad} \sim \frac{2 \pi A_2^3 (1-e_2^2)^{3/2} \sqrt{m_{1,a} + m_{1,b}}}{A_1^{3/2}m_2 \sqrt{G}}, \label{eq:t_quad}
 \end{equation}
+where $A_1$ and $A_2$ are the orbital separations of the inner and outer binary, and $e_2$ is the eccentricity of the outer binary. Setting $e_2 = 0.1$, we show $t_{\rm quad}$ as a function of $A_2$ for three separate values of $A_1$ in Figure \ref{fig:t_quad}.
+%an estimate for $t_{\rm quad}$:
+%\begin{equation}
+%t_{\rm quad} \sim 12 \left( \frac{A_2}{300~ {\rm AU}} \right)^3 \left( \frac{A_1}{1~ {\rm AU}} \right)^{-3/2} \left[ 1 - \left( \frac{e_2}{0.5} \right)^2 \right]^{3/2} {\rm Myr}. \label{eq:t_quad_this}
+%\end{equation} 
+
+
+In their parameter space study, \citet{naoz14} find that the inner binary merges, $t_{\rm merge}$ between 5 and 100 $t_{\rm quad}$. Adopting 475 Myr for $t_{\rm merge}$, the region between the dashed lines in Figure \ref{fig:t_quad} (1/5 and 1/100 $t_{\rm merge}$) indicate the range of $t_{\rm quad}$ inferred. The EKL mechanism could have driven the inner binary to merge for $A_1 = 1$ AU and $A_2 = 200 - 500$ AU. Although there is a great deal of uncertainty in this estimate, particularly since we cannot know exactly how many quadrupolar timescales the system went through before merger, Figure \ref{fig:t_quad} shows that the values for $A_1$ and $A_2$ implied by our $t_{\rm merge}$ are reasonable for a putative hierarchical triple progenitor of HS 2220$+$2146. Furthermore, the distribution of systems that merge forming blue straggler binaries in \citet{naoz14} (see their Figure 8) peaks at roughly $P_{\rm orb} \sim 10^5$ days or $A \sim 100$ AU which matches our putative triple formation scenario outlined in \ref{fig:scenario}. We want to stress that although we cannot ascribe the merger of the inner binary of HS 2220$+$2146 to any particular physical process with certainty, the EKL mechanism is a natural choice, completely consistent with our suggested formation scenario.
+
+
+\begin{figure}[]
+\begin{center}
+\includegraphics[width=0.99\columnwidth]{../figures/t_quad.pdf}
+\caption{ The quadrupolar timescale given in Equation \ref{eq:t_quad} as a function of the outer orbital separation, $A_2$, for three different inner binary orbital separations, $A_1$, of 0.1 AU, 1 AU, and 10 AU ($e_2=0.1$). The horizontal dashed lines indicate 1/5th and 1/100th of 475 Myr, the calculated $t_{\rm merge}$. \citet{naoz13} find that the inner binary typically merges between 5 and 100 $t_{\rm quad}$, indicated by the gray, filled region between the two dashed lines. HS 2220$+$2146 is consistent with having been formed through the EKL mechanism if the system began as a hierarchical triple with $A_1 \approx 1$ AU and $A_2 \approx 200-500$ AU. }
+\label{fig:t_quad}
+\end{center}
+\end{figure}
+
+
+\subsection{Wind Mass Accretion}
+
+Our evolutionary formation for this system relies on the assumption that the two stars have never interacted, however when each star sheds its envelope, evolving from an AGB star into a WD, some portion of the mass lost may be accreted by its companion. The binary separation is large enough that neither star will overfill its Roche lobe as AGB star; instead the companion could accrete from the AGB star's wind. We are interested in determining first if, when the first star evolves into a WD, enough mass can be accreted by the Main Sequence companion to affect its mass or evolutionary timescale. Second, we would also like to know if, when the second star evolves into a WD, enough of its mass accretes onto its WD companion to affect its observed $M_{\rm WD}$ and $\tau_{\rm cool}$.
+
+
+It is thought that mass is lost from AGB stars via a two step process \citep[see][and references therein]{vassiliadis93}. First, pulsations on the AGB give rise to a low velocity wind which is slowed by gravity as it expands and cools. When the temperature decreases sufficiently, dust grains condense ($\approx$ 1000 K for silicates and $\approx$ 1500 K from amorphous carbon grains) \citep{hofner09}. With their increased opacity, dust grains drive the second stage of the wind, caused by radiation pressure impacting the dust grains which are coupled to the surrounding gas, and the wind is quickly accelerated away from the star. 
+
+%Could any of this mass have accreted onto its companion in a wide orbit?  
+%The most significant accretion occurs when each star loses its envelope when evolving from an AGB star into a WD. Since the masses and separations involved in each are significantly different, we address these two stages individually.
+
+\citet{mohamed07} showed that a detached companion with a separation of $\sim$tens of AU could gravitationally focus the wind of an AGB star before being accelerated by radiation pressure \citep[see also][]{mohamed12}. Termed Wind Roche Lobe Overflow (WRLOF), \citet{abate13} suggest the condition for WRLOF should be that the dust formation radius, $R_c$ is a significant fraction of the Roche lobe radius, $R_L$ of the donor star. Specifically, they find that when the $R_c > 0.4~ R_L$, the accretion rate is enhanced with respect to the canonical Bondi-Hoyle-Littleton accretion rate (BHL), while $R_c < 0.4~ R_L$, $\dot{M}$ is well approximated by BHL. \citet{abate13} suggest that $R_c \approx 3~ R_{\star}$ for most of the AGB phase. In a more detailed discussion, \citet{hofner09} argues that silicates and amorphous carbon grains both typically have $R_c \approx 2-3 R_{\star}$ ($R_c$ may be somewhat larger for silicates when there is significant iron present). Recent observations of M-type AGB stars using mid-infrared interferometry seem to agree, showing $R_c/R_{\star} \approx 2$ for Al$_2$O$_3$ and $R_c/R_{\star} \approx 4$ for silicates \citep{karovicova13}. Additionally, \citet{olofsson02} and \citet{gonzalez_delgado03} find that they can reasonably approximate the transition line profiles of CO and SiO in several dozen AGB stars using a constant wind velocity model for distances greater than a few stellar radii. From our MESA simulations, we find that a 4 \Msun\ star reaches a maximum radius of $\approx 2.7$ AU, while the potential donor star has $R_L \approx 40$ AU (assuming an orbital separation of 110 AU). Therefore, WRLOF likely did not operate in HS 2220$+$2146, and the BHL accretion rate should well approximate $\dot{M}$.
+
+
+BHL accretion assumes a companion accreting mass from a plane parallel wind with a constant velocity. This is appropriate here since the orbital separation is much larger than the radius of an AGB star. We first determine the Bondi radius where we combine the AGB wind velocity, $v_{\rm wind}$, and the orbital velocity, $v_{\rm orb}$, to determine the relative velocity between the wind and the accretor:
+\begin{equation}
+r_{\rm acc} = \frac{2 G M_{\rm acc}}{v_{\rm wind}^2 + v_{\rm orb}^2} \label{eq:r_bondi} 
+\end{equation}
+where $M_{\rm acc}$ is the mass of the accretor. A wind speed of 10 km s$^{-1}$ is typical \citep{gonzalez_delgado03}, and $M_{\rm acc}$ and $v_{\rm orb}$ depend on the specifics of the binary in question.
+
+%\citet{gonzalez_delgado03} find that AGB wind velocities scale roughly with mass loss rates, and that for $\dot{M} > 10^{-6} \Msun$ yr$^{-1}$, wind velocities of 10-20 km s$^{-1}$ are appropriate. 
+
+%In general, $R_c$ has a complicated dependence on the mass losing star's temperature, radius, and elemental abundances. Furthermore each molecule will have its own $R_c$, condensing at different radii. 
+
+
+We are first interested in when the 2.8 \Msun\ outer star evolves into a 0.7 \Msun\ WD, with a 3.8 \Msun\ blue straggler companion as the accretor at a separation of $\sim$110 AU. Using these numbers, we calculate the Bondi radius:
+\begin{equation}
+r_{\rm acc} \approx 44~ {\rm AU}.  \label{eq:r_acc_1}
+\end{equation}
+In the plane parallel limit, we can estimate the amount of mass accreted onto the companion star by determining the fraction of the sky subtended by the companion's accretion radius, $r_{\rm acc}$ given the binary separation, $A$. In the limiting case, all the mass that falls within the Bondi radius is accreted:
+\begin{eqnarray}
+M_{\rm acc} &\approx& \frac{\pi r_{\rm acc}^2}{4 \pi A^2} \Delta M_{\rm donor}  \label{eq:M_acc} \\
+&\approx& 0.1 \left( \frac{r_{\rm acc}}{44~ {\rm AU}} \right)^2 \left( \frac{A}{110~{\rm AU}} \right)^{-2} \left( \frac{\Delta M_{\rm donor}}{2.1~ \Msun} \right) \Msun.
+\end{eqnarray}
+Here, the Bondi radius is a significant portion of the orbital separation, and the plane parallel assumption may not be appropriate since the effect of the Roche potential may need to be taken into account. However, using 3D smoothed particle hydrodynamics, \citet{mastrodemos99} simulate the effect of a wide, detached binary on the outflow of the wind from a dust-driven AGB wind. They find the accretion rates onto a binary companion are even lower than the Bondi-Hoyle derived rates. Even if we adopt the pessimistic assumption that all the mass falling within $r_{\rm acc}$ is accreted, only $\approx$0.1 \Msun\ is accreted. This is an insignificant amount; a difference of 0.1 \Msun\ alters the stellar lifetime by only $\approx$ 20 Myr. 
+
+
+This calculation can similarly be used to rule out the alternative blue straggler formation scenario in which instead of a hierarchical triple, the system begins as a roughly equal mass binary, each star of roughly 2.7 \Msun. If when the slightly more massive star evolves into a WD, its companion accretes $\approx 1$\Msun, it can rejuvenate the star, essentially forming a new, more massive MS star. Equations \ref{eq:r_bondi} and \ref{eq:M_acc} show the difficulty of this formation scenario: $r_{\rm acc}$ will be smaller for a smaller mass accretor, and therefore $M_{\rm acc}$ will be even smaller than 0.1 \Msun\ calculated above. For this scenario to be viable, the binary would have to accrete roughly half the mass lost by the AGB star (possibly through WRLOF), which is extremely unlikely for the orbital separations inferred from the projected separation observed today.
 
 
 
-\section{Simulation Set Up}
+We are next interested in when the 3.8 \Msun\ star evolves into a 0.8 \Msun\ WD, with a 0.7 \Msun\ WD accretor at a separation of 160 AU. Using equation \ref{eq:r_bondi}, we determine the Bondi radius for the WD:
+\begin{equation}
+r_{\rm acc} \approx 10~ {\rm AU}. \label{eq:r_acc_2}
+\end{equation}
+With a larger orbital separation of 160 AU, we can determine the amount of mass accreted using Equation \ref{eq:M_acc}:
+\begin{equation}
+M_{\rm acc} \approx 0.003 \left( \frac{r_{\rm acc}}{10~ {\rm AU}} \right)^2 \left( \frac{A}{160~{\rm AU}} \right)^{-2} \left( \frac{\Delta M_{\rm donor}}{3~ \Msun} \right) \Msun. \nonumber
+\end{equation}
+Even a small hydrogen mass, less than 10$^{-5}$~\Msun, accreted onto a WD is substantial enough to induce hydrogen burning \citep[e.g.,][]{nomoto07, wolf13}. Such nuclear burning would temporarily increase the WD's temperature, but leave its mass will largely unaffected. The system would be older than the age derived previously, making the discrepancy between cooling ages even larger. Given the several pessimistic assumptions used to derive this mass, it is possible that the system never underwent hydrogen burning. But even if hydrogen fusion did occur, our conclusion that the more massive WD is younger one in the pair remains unaffected. 
+
+We can rule out the alternative scenario in which the 0.8 \Msun\ WD was formed first (the standard formation scenario), then reheated by a phase of surface hydrogen burning from mass accretion. Even if the WD retained enough of the nuclear burning energy to reheat it back to 10$^5$ K, the WD's cooling tracks remain essentially unchanged, and the two WDs would have roughly the same $\tau_{\rm cool}$. To recreate the observed cooling age difference, the 0.8 \Msun\ WD would have to be steadily burning material for 10$^8$ years. Since, planetary nebulae dissipate in 10$^4$ to 10$^5$ yrs \citep{badenes15}, HS 2220$+$2146 is unlikely to have formed in this manner.
 
 
 
-\section{Comparison with Observations}
 
 
 
-\section{Conclusions}
+
+
+
+
+\section{Conclusions} \label{sec:concl}
+
+({\bf To be written.})
+
+%\citet{naoz14} suggest that a tell-tale sign of the EKL mechanism forming a blue straggler binary would be misalignment between the spin of the merger product and the outer orbit. However, only in rare cases can the spin of a WD be measured, and we know of no instances where the spin-orbit misalignment angle has been measured.   
+
+
 
 
 
 \acknowledgments
 
+We acknowledge useful conversations with Smadar Naoz, Enrico Ramirez-Ruiz, and Phil Macias.
 
-\clearpage
+
+\newcommand\icarus{\ref@jnl{Icarus}}% 
+          % Icarus 
+
+
+%\clearpage
 \setlength{\baselineskip}{0.6\baselineskip}
-\bibliography{references_v2}
+\bibliography{references}
 \setlength{\baselineskip}{1.667\baselineskip}
 
 
